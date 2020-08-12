@@ -1,4 +1,4 @@
-[![<CircleCI>](https://circleci.com/gh/naval2408/microservice_project_uacity.svg?style=svg)](<LINK>)
+[![<CircleCI>](https://circleci.com/gh/naval2408/microservice_project_uacity.svg?style=svg)](https://app.circleci.com/pipelines/github/naval2408/microservice_project_uacity)
 
 ## Project Overview
 In this project, we have deployed a containerized Python service that predicts the housing prices in Boston using a trained prediction model.
