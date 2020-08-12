@@ -1,0 +1,257 @@
+<paste log output from Docker prediction, here>
+(.devops) (base) Navals-MacBook-Air:project-ml-microservice-kubernetes navalkishorupadhyay$ ./run_docker.sh
+Sending build context to Docker daemon  758.8kB
+Step 1/6 : FROM python:3.7.3-stretch
+3.7.3-stretch: Pulling from library/python
+6f2f362378c5: Pull complete
+494c27a8a6b8: Pull complete
+7596bb83081b: Pull complete
+372744b62d49: Pull complete
+615db220d76c: Pull complete
+39aa0c89bda1: Pull complete
+ac275157d894: Pull complete
+98d16dec829a: Pull complete
+c8514b1c6524: Pull complete
+Digest: sha256:205cafadbb7f0c48f2a6d655eb100a9675aa85e6e73958860f488406cce09779
+Status: Downloaded newer image for python:3.7.3-stretch
+ ---> 34a518642c76
+Step 2/6 : WORKDIR /app
+ ---> Running in a0243fcf3ccd
+Removing intermediate container a0243fcf3ccd
+ ---> fa4f0c39f8a9
+Step 3/6 : COPY . app.py /app/
+ ---> d2bbff187a38
+Step 4/6 : RUN pip install --upgrade pip && pip install -r requirements.txt
+ ---> Running in c41f263a8b23
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/bd/b1/56a834acdbe23b486dea16aaf4c27ed28eb292695b90d01dff96c96597de/pip-20.2.1-py2.py3-none-any.whl (1.5MB)
+Installing collected packages: pip
+  Found existing installation: pip 19.1.1
+    Uninstalling pip-19.1.1:
+      Successfully uninstalled pip-19.1.1
+Successfully installed pip-20.2.1
+Collecting Flask
+  Downloading Flask-1.1.2-py2.py3-none-any.whl (94 kB)
+Collecting numpy
+  Downloading numpy-1.19.1-cp37-cp37m-manylinux2010_x86_64.whl (14.5 MB)
+Collecting pandas
+  Downloading pandas-1.1.0-cp37-cp37m-manylinux1_x86_64.whl (10.5 MB)
+Collecting scikit-learn==0.20.3
+  Downloading scikit_learn-0.20.3-cp37-cp37m-manylinux1_x86_64.whl (5.4 MB)
+Collecting pylint
+  Downloading pylint-2.5.3-py3-none-any.whl (324 kB)
+Collecting click>=5.1
+  Downloading click-7.1.2-py2.py3-none-any.whl (82 kB)
+Collecting itsdangerous>=0.24
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+Collecting Werkzeug>=0.15
+  Downloading Werkzeug-1.0.1-py2.py3-none-any.whl (298 kB)
+Collecting Jinja2>=2.10.1
+  Downloading Jinja2-2.11.2-py2.py3-none-any.whl (125 kB)
+Collecting pytz>=2017.2
+  Downloading pytz-2020.1-py2.py3-none-any.whl (510 kB)
+Collecting python-dateutil>=2.7.3
+  Downloading python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+Collecting scipy>=0.13.3
+  Downloading scipy-1.5.2-cp37-cp37m-manylinux1_x86_64.whl (25.9 MB)
+Collecting mccabe<0.7,>=0.6
+  Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)
+Collecting astroid<=2.5,>=2.4.0
+  Downloading astroid-2.4.2-py3-none-any.whl (213 kB)
+Collecting toml>=0.7.1
+  Downloading toml-0.10.1-py2.py3-none-any.whl (19 kB)
+Collecting isort<5,>=4.2.5
+  Downloading isort-4.3.21-py2.py3-none-any.whl (42 kB)
+Collecting MarkupSafe>=0.23
+  Downloading MarkupSafe-1.1.1-cp37-cp37m-manylinux1_x86_64.whl (27 kB)
+Collecting six>=1.5
+  Downloading six-1.15.0-py2.py3-none-any.whl (10 kB)
+Collecting lazy-object-proxy==1.4.*
+  Downloading lazy_object_proxy-1.4.3-cp37-cp37m-manylinux1_x86_64.whl (56 kB)
+Collecting wrapt~=1.11
+  Downloading wrapt-1.12.1.tar.gz (27 kB)
+Collecting typed-ast<1.5,>=1.4.0; implementation_name == "cpython" and python_version < "3.8"
+  Downloading typed_ast-1.4.1-cp37-cp37m-manylinux1_x86_64.whl (737 kB)
+Building wheels for collected packages: wrapt
+  Building wheel for wrapt (setup.py): started
+  Building wheel for wrapt (setup.py): finished with status 'done'
+  Created wheel for wrapt: filename=wrapt-1.12.1-cp37-cp37m-linux_x86_64.whl size=71567 sha256=6720dcac3036d160b674654dc81e3372aa4ef37c3a8681d0dd9b04f1a8b13c61
+  Stored in directory: /root/.cache/pip/wheels/62/76/4c/aa25851149f3f6d9785f6c869387ad82b3fd37582fa8147ac6
+Successfully built wrapt
+Installing collected packages: click, itsdangerous, Werkzeug, MarkupSafe, Jinja2, Flask, numpy, pytz, six, python-dateutil, pandas, scipy, scikit-learn, mccabe, lazy-object-proxy, wrapt, typed-ast, astroid, toml, isort, pylint
+Successfully installed Flask-1.1.2 Jinja2-2.11.2 MarkupSafe-1.1.1 Werkzeug-1.0.1 astroid-2.4.2 click-7.1.2 isort-4.3.21 itsdangerous-1.1.0 lazy-object-proxy-1.4.3 mccabe-0.6.1 numpy-1.19.1 pandas-1.1.0 pylint-2.5.3 python-dateutil-2.8.1 pytz-2020.1 scikit-learn-0.20.3 scipy-1.5.2 six-1.15.0 toml-0.10.1 typed-ast-1.4.1 wrapt-1.12.1
+Removing intermediate container c41f263a8b23
+ ---> 934dd2d1cf81
+Step 5/6 : EXPOSE 80
+ ---> Running in 4bec6e9595b5
+Removing intermediate container 4bec6e9595b5
+ ---> 442406ffcf9c
+Step 6/6 : CMD ["python", "app.py"]
+ ---> Running in 3ec6c3414903
+Removing intermediate container 3ec6c3414903
+ ---> 6fd1a831917c
+Successfully built 6fd1a831917c
+Successfully tagged development:latest
+REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
+development                          latest              6fd1a831917c        1 second ago        1.23GB
+jenkinsci/blueocean                  latest              b2e3a5384a86        4 weeks ago         562MB
+docker                               dind                d5d139be840a        6 weeks ago         226MB
+ubuntu                               latest              1d622ef86b13        3 months ago        73.9MB
+docker/desktop-storage-provisioner   v1.0                605a0f683b7b        5 months ago        33.1MB
+k8s.gcr.io/kube-proxy                v1.15.5             cbd7f21fec99        10 months ago       82.4MB
+k8s.gcr.io/kube-apiserver            v1.15.5             e534b1952a0d        10 months ago       207MB
+k8s.gcr.io/kube-controller-manager   v1.15.5             1399a72fa1a9        10 months ago       159MB
+k8s.gcr.io/kube-scheduler            v1.15.5             fab2dded59dd        10 months ago       81.1MB
+python                               3.7.3-stretch       34a518642c76        14 months ago       929MB
+docker/kube-compose-controller       v0.4.23             a8c3d87a58e7        14 months ago       35.3MB
+docker/kube-compose-api-server       v0.4.23             f3591b2cb223        14 months ago       49.9MB
+k8s.gcr.io/coredns                   1.3.1               eb516548c180        19 months ago       40.3MB
+k8s.gcr.io/etcd                      3.3.10              2c4adeb21b4f        20 months ago       258MB
+jenkins                              latest              cd14cecfdb3a        2 years ago         696MB
+aquasec/microscanner                 latest              d7d7453009a1        2 years ago         16.8MB
+k8s.gcr.io/pause                     3.1                 da86e6ba6ca1        2 years ago         742kB
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 254-422-904
+[2020-08-10 20:38:23,203] INFO in app: JSON payload:
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-08-10 20:38:23,228] INFO in app: Inference payload DataFrame:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-08-10 20:38:23,246] INFO in app: Scaling Payload:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+172.17.0.1 - - [10/Aug/2020 20:38:23] "POST /predict HTTP/1.1" 200 -
+[2020-08-11 06:17:03,034] INFO in app: JSON payload:
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-08-11 06:17:03,167] INFO in app: Inference payload DataFrame:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-08-11 06:17:03,229] INFO in app: Scaling Payload:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+172.17.0.1 - - [11/Aug/2020 06:17:03] "POST /predict HTTP/1.1" 200 -
+^C(.devops) (base) Navals-MacBook-Air:project-ml-microservice-kubernetes navalkishorupadhyay$ ./run_docker.sh
+Sending build context to Docker daemon  759.3kB
+Step 1/6 : FROM python:3.7.3-stretch
+ ---> 34a518642c76
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> fa4f0c39f8a9
+Step 3/6 : COPY . app.py /app/
+ ---> c651bf22e7e3
+Step 4/6 : RUN pip install --upgrade pip && pip install -r requirements.txt
+ ---> Running in 40a6057ad3f7
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/bd/b1/56a834acdbe23b486dea16aaf4c27ed28eb292695b90d01dff96c96597de/pip-20.2.1-py2.py3-none-any.whl (1.5MB)
+Installing collected packages: pip
+  Found existing installation: pip 19.1.1
+    Uninstalling pip-19.1.1:
+      Successfully uninstalled pip-19.1.1
+Successfully installed pip-20.2.1
+Collecting Flask
+  Downloading Flask-1.1.2-py2.py3-none-any.whl (94 kB)
+Collecting numpy
+  Downloading numpy-1.19.1-cp37-cp37m-manylinux2010_x86_64.whl (14.5 MB)
+Collecting pandas
+  Downloading pandas-1.1.0-cp37-cp37m-manylinux1_x86_64.whl (10.5 MB)
+Collecting scikit-learn==0.20.3
+  Downloading scikit_learn-0.20.3-cp37-cp37m-manylinux1_x86_64.whl (5.4 MB)
+Collecting pylint
+  Downloading pylint-2.5.3-py3-none-any.whl (324 kB)
+Collecting Werkzeug>=0.15
+  Downloading Werkzeug-1.0.1-py2.py3-none-any.whl (298 kB)
+Collecting Jinja2>=2.10.1
+  Downloading Jinja2-2.11.2-py2.py3-none-any.whl (125 kB)
+Collecting click>=5.1
+  Downloading click-7.1.2-py2.py3-none-any.whl (82 kB)
+Collecting itsdangerous>=0.24
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+Collecting python-dateutil>=2.7.3
+  Downloading python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+Collecting pytz>=2017.2
+  Downloading pytz-2020.1-py2.py3-none-any.whl (510 kB)
+Collecting scipy>=0.13.3
+  Downloading scipy-1.5.2-cp37-cp37m-manylinux1_x86_64.whl (25.9 MB)
+Collecting mccabe<0.7,>=0.6
+  Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)
+Collecting astroid<=2.5,>=2.4.0
+  Downloading astroid-2.4.2-py3-none-any.whl (213 kB)
+Collecting isort<5,>=4.2.5
+  Downloading isort-4.3.21-py2.py3-none-any.whl (42 kB)
+Collecting toml>=0.7.1
+  Downloading toml-0.10.1-py2.py3-none-any.whl (19 kB)
+Collecting MarkupSafe>=0.23
+  Downloading MarkupSafe-1.1.1-cp37-cp37m-manylinux1_x86_64.whl (27 kB)
+Collecting six>=1.5
+  Downloading six-1.15.0-py2.py3-none-any.whl (10 kB)
+Collecting wrapt~=1.11
+  Downloading wrapt-1.12.1.tar.gz (27 kB)
+Collecting lazy-object-proxy==1.4.*
+  Downloading lazy_object_proxy-1.4.3-cp37-cp37m-manylinux1_x86_64.whl (56 kB)
+Collecting typed-ast<1.5,>=1.4.0; implementation_name == "cpython" and python_version < "3.8"
+  Downloading typed_ast-1.4.1-cp37-cp37m-manylinux1_x86_64.whl (737 kB)
+Building wheels for collected packages: wrapt
+  Building wheel for wrapt (setup.py): started
+  Building wheel for wrapt (setup.py): finished with status 'done'
+  Created wheel for wrapt: filename=wrapt-1.12.1-cp37-cp37m-linux_x86_64.whl size=71573 sha256=37f14c14b0336a11c4c25671ba3292584764856d565877a76c6edba92af98abb
+  Stored in directory: /root/.cache/pip/wheels/62/76/4c/aa25851149f3f6d9785f6c869387ad82b3fd37582fa8147ac6
+Successfully built wrapt
+Installing collected packages: Werkzeug, MarkupSafe, Jinja2, click, itsdangerous, Flask, numpy, six, python-dateutil, pytz, pandas, scipy, scikit-learn, mccabe, wrapt, lazy-object-proxy, typed-ast, astroid, isort, toml, pylint
+Successfully installed Flask-1.1.2 Jinja2-2.11.2 MarkupSafe-1.1.1 Werkzeug-1.0.1 astroid-2.4.2 click-7.1.2 isort-4.3.21 itsdangerous-1.1.0 lazy-object-proxy-1.4.3 mccabe-0.6.1 numpy-1.19.1 pandas-1.1.0 pylint-2.5.3 python-dateutil-2.8.1 pytz-2020.1 scikit-learn-0.20.3 scipy-1.5.2 six-1.15.0 toml-0.10.1 typed-ast-1.4.1 wrapt-1.12.1
+Removing intermediate container 40a6057ad3f7
+ ---> 6ea894fadcb3
+Step 5/6 : EXPOSE 80
+ ---> Running in f9659e2d73fd
+Removing intermediate container f9659e2d73fd
+ ---> d81d569862b2
+Step 6/6 : CMD ["python", "app.py"]
+ ---> Running in 51ccb8088c28
+Removing intermediate container 51ccb8088c28
+ ---> 5f64df8365d3
+Successfully built 5f64df8365d3
+Successfully tagged development:latest
+REPOSITORY                           TAG                 IMAGE ID            CREATED                  SIZE
+development                          latest              5f64df8365d3        Less than a second ago   1.23GB
+<none>                               <none>              6fd1a831917c        11 hours ago             1.23GB
+jenkinsci/blueocean                  latest              b2e3a5384a86        4 weeks ago              562MB
+docker                               dind                d5d139be840a        6 weeks ago              226MB
+ubuntu                               latest              1d622ef86b13        3 months ago             73.9MB
+docker/desktop-storage-provisioner   v1.0                605a0f683b7b        5 months ago             33.1MB
+k8s.gcr.io/kube-controller-manager   v1.15.5             1399a72fa1a9        10 months ago            159MB
+k8s.gcr.io/kube-proxy                v1.15.5             cbd7f21fec99        10 months ago            82.4MB
+k8s.gcr.io/kube-apiserver            v1.15.5             e534b1952a0d        10 months ago            207MB
+k8s.gcr.io/kube-scheduler            v1.15.5             fab2dded59dd        10 months ago            81.1MB
+python                               3.7.3-stretch       34a518642c76        14 months ago            929MB
+docker/kube-compose-controller       v0.4.23             a8c3d87a58e7        14 months ago            35.3MB
+docker/kube-compose-api-server       v0.4.23             f3591b2cb223        14 months ago            49.9MB
+k8s.gcr.io/coredns                   1.3.1               eb516548c180        19 months ago            40.3MB
+k8s.gcr.io/etcd                      3.3.10              2c4adeb21b4f        20 months ago            258MB
+jenkins                              latest              cd14cecfdb3a        2 years ago              696MB
+aquasec/microscanner                 latest              d7d7453009a1        2 years ago              16.8MB
+k8s.gcr.io/pause                     3.1                 da86e6ba6ca1        2 years ago              742kB
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 380-544-199
+[2020-08-11 07:22:40,061] INFO in app: JSON payload:
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-08-11 07:22:40,097] INFO in app: Inference payload DataFrame:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-08-11 07:22:40,115] INFO in app: Scaling Payload:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-08-11 07:22:40,123] INFO in app: Prediction output: [20.35373177134412]
+172.17.0.1 - - [11/Aug/2020 07:22:40] "POST /predict HTTP/1.1" 200 -

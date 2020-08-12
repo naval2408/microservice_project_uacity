@@ -1,0 +1,26 @@
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+(venv) (base) Navals-MacBook-Air:project-ml-microservice-kubernetes navalkishorupadhyay$ kubectl get pods
+NAME          READY   STATUS    RESTARTS   AGE
+development   1/1     Running   0          7m48s
+(venv) (base) Navals-MacBook-Air:project-ml-microservice-kubernetes navalkishorupadhyay$ kubectl logs development
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 326-206-224
+[2020-08-12 09:11:06,805] INFO in app: JSON payload:
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-08-12 09:11:06,835] INFO in app: Inference payload DataFrame:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-08-12 09:11:06,854] INFO in app: Scaling Payload:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-08-12 09:11:06,861] INFO in app: Prediction output: [20.35373177134412]
+127.0.0.1 - - [12/Aug/2020 09:11:06] "POST /predict HTTP/1.1" 200 -
