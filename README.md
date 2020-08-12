@@ -1,4 +1,4 @@
-<include a CircleCI status badge, here>
+https://app.circleci.com/pipelines/github/naval2408/microservice_project_uacity/2/workflows/e10b793e-216e-4ae9-be9e-8c356f6574c5/jobs/2
 
 ## Project Overview
 
